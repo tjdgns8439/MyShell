@@ -43,6 +43,8 @@ int main(int argc, char**argv){
   	fputs(prompt, stdout);
 	fgets(cmdline, BUFSIZ, stdin);
 	cmdline[strlen(cmdline) -1] = '\0';
+	if (strcmp("exit", cmdline) == 0)
+		break;
   
 	switch(pid=fork()){
 	case 0:
